@@ -85,7 +85,7 @@ if test $(command -v pre-commit) && test $(command -v terraform) && test $(comma
 
     cat <<EOF > .pre-commit-config.yaml
 repos:
-    - repo: git://github.com/antonbabenko/pre-commit-terraform
+    - repo: https://github.com/antonbabenko/pre-commit-terraform
       rev: v1.45.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
       hooks:
             - id: terraform_validate
