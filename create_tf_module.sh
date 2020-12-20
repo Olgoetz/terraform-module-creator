@@ -80,7 +80,7 @@ EOF
 # SETTING UP PRECOMMIT
 # *********************************************
 
-if test $(command -v pre-commit) && test $(command -v terraform) && test $(command -v terraform-docs); then
+if command -v pre-commit >/dev/null && command -v terraform >/dev/null && command -v terraform-docs >/dev/null; then
     echo "Creating pre-commit config file..."
 
     cat <<EOF > .pre-commit-config.yaml
@@ -98,7 +98,7 @@ EOF
     echo "<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->" >> README.md
 
     echo "Install pre-commit hooks..."
-    
+    git init
     pre-commit install
 
 fi
